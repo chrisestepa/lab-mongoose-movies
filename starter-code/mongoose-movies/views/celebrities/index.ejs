@@ -3,11 +3,9 @@
 <ul>
   <% celebrities.forEach((c) => { %>
     <li>
-      <%= c.name %> - /
-        <%= c.occupation %> - /
-          <%= c.catchPhrase %>
+      <a href='/celebrities/'<%=c.name%>><%= c.name %></a>
     </li>
     <%  }) %>
 </ul>
 
-<a href="/celebrities">Back to celebrities...</a>
+<a href="/">Back home...</a>

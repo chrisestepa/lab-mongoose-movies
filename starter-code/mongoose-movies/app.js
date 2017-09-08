@@ -8,9 +8,7 @@ const mongoose = require('mongoose');
 const expressLayouts = require('express-ejs-layouts');
 const {dbURL} = require('./config/db');
 
-var index = require('./routes/index');
-var movies = require('./routes/movies');
-
+const moviesRouter = require('./routes/movies');
 const celebritiesRouter = require('./routes/celebrities');
 
 const app = express();
