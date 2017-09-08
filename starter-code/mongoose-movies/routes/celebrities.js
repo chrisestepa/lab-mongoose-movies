@@ -20,30 +20,15 @@ router.get('/celebrities', function(req, res, next) {
   });
 });
 
-// router.get('/celebrities/:id', function(req, res, next) {
-//   Celebrity.findOne({name: req.params.name}, (err, celebs) => {
-//     if (err) { return next(err); }
-//     console.log(req.params.id);
-//     res.render('celebrities/show', {
-//       title: celebs.name,
-//       celebrities: celebs
-//     });
-//   });
-// });
 
-router.get('/celebrities:id', (req, res, next) => {
+router.get('/celebrities/:id', (req, res, next) => {
 
   const celebId = req.params.id;
-  console.log(celebId);
-
-  Celebrity.findById(celebId, (err, product) => {
+  Celebrity.findById(celebId, (err, celeb) => {
     if (err) { return next(err); }
-    res.render('celebrities/show',{title: celebId, celebrities: celeb});
+    res.render('celebrities/show',{title: celeb.name, celebs: celeb});
   });
 });
-
-
-
 
 
 module.exports = router;

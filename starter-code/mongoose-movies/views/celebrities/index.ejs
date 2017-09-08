@@ -1,9 +1,9 @@
 <h2><%= title %></h2>
 
 <ul>
-  <% celebrities.forEach((c) => { %>
+  <% celebrities.forEach( c => { %>
     <li>
-      <a href='/celebrities/'<%=c.name%>><%= c.name %></a>
+      <a href="/celebrities/<%= c.id %>"><%= c.name %></a>
     </li>
     <%  }) %>
 </ul>
